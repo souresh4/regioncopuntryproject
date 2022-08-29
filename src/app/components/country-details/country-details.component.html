@@ -1,0 +1,38 @@
+<p>country-details works!</p>
+
+<ng-container *ngIf="countrydetailsflag">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th colspan="4" scope="col">Country Details</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">Name</th>
+                <td>{{ countrydetaildata.name}}</td>
+            </tr>
+            <tr>
+                <th scope="row">Capital</th>
+                <td>{{ countrydetaildata.capital}}</td>
+            </tr>
+            <tr>
+                <th scope="row">Population</th>
+                <td>{{ countrydetaildata.population}}</td>
+            </tr>
+            <tr>
+                <th scope="row">Currencies</th>
+                <td>{{ countrydetaildata.currencies[0].name}}</td>
+            </tr>
+            <tr>
+                <th scope="row">Flag</th>
+                <td>
+                  <img 
+                    [src]="countrydetaildata.flag" 
+                    [alt]="countrydetaildata .name + ' Flag'"
+                    [width]="100"/>
+                </td>
+              </tr>
+        </tbody>
+    </table>
+</ng-container>

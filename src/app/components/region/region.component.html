@@ -1,0 +1,32 @@
+<mat-card>
+    <mat-label>Regions</mat-label>
+    <mat-select (selectionChange)="changeEvent($event)">
+        <mat-option *ngFor="let loop of regionSet" [value]="loop.value">
+            {{loop.viewValue}}
+        </mat-option>
+    </mat-select>
+
+
+
+
+
+</mat-card>
+<mat-card>
+    <ng-container *ngIf="flag">
+        <mat-label>Countries</mat-label>
+        <mat-select (selectionChange)="selectcountryFunc($event.value)">
+            <mat-option *ngFor="let country of countriesDatasetArray" [value]="country">
+                {{country.name}}
+            </mat-option>
+        </mat-select>
+    </ng-container>
+</mat-card>
+
+<mat-card>
+
+    <ng-container *ngIf="countrydetailsFlag">
+        <app-country-details [item]="seletedCoutryDataset"></app-country-details>
+    </ng-container>
+</mat-card>
+
+
